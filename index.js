@@ -58,3 +58,16 @@ document.addEventListener("DOMContentLoaded", function () {
     // Initial display of first image
     updateImage();
 });
+
+//Mobile-friendly specifications
+window.addEventListener('resize', function() {
+    var screenWidth = window.innerWidth;
+    var contentWrapper = document.getElementById('content-wrapper');
+    
+    if (screenWidth < 1025) {
+      contentWrapper.classList.remove('grid');
+    } else {
+      contentWrapper.classList.add('grid');
+    }
+  });
+  
