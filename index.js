@@ -66,6 +66,9 @@ window.addEventListener('resize', function() {
     
     if (screenWidth < 1025) {
       contentWrapper.classList.remove('grid');
+      contentWrapper.classList.remove('slide-in-left');
+      contentWrapper.classList.remove('slide-in-right');
+      contentWrapper.classList.add('slide-in-bottom');
     } else {
       contentWrapper.classList.add('grid');
     }
