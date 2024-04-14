@@ -60,14 +60,25 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //Mobile-friendly specifications
+window.addEventListener('load', function() {
+    var screenWidth = window.innerWidth;
+    var contentWrapper = document.getElementById('content-wrapper');
+    
+    if (screenWidth < 1025) {
+        contentWrapper.classList.remove('grid');
+        contentWrapper.classList.remove('grid-cols-2');
+    }
+});
+
 window.addEventListener('resize', function() {
     var screenWidth = window.innerWidth;
     var contentWrapper = document.getElementById('content-wrapper');
     
     if (screenWidth < 1025) {
-      contentWrapper.classList.remove('grid');
+        contentWrapper.classList.remove('grid');
+        contentWrapper.classList.remove('grid-cols-2');
     } else {
-      contentWrapper.classList.add('grid');
+        contentWrapper.classList.add('grid');
+        contentWrapper.classList.add('grid-cols-2');
     }
-  });
-  
+});
