@@ -13,6 +13,25 @@
   animation: slideInFromBottom 1s ease-out forwards;
 }
 
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-top {
+  animation: slideInFromTop 1s ease-out forwards;
+}
+
+.slide-in-top-btns {
+  animation: slideInFromTopButtons 1s ease-out forwards;
+}
+
 @keyframes slideInFromRight {
   from {
     transform: translateX(100%);
@@ -41,4 +60,17 @@
 
 .slide-in-left {
   animation: slideInFromLeft 1s ease-out forwards;
+}
+
+.ease-in-img {
+  animation: ease-in-image 1s ease-out forwards;
+}
+
+@keyframes ease-in-image {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
