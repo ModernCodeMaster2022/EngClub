@@ -82,3 +82,21 @@ window.addEventListener('resize', function() {
         contentWrapper.classList.add('grid-cols-2');
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const toggleNavBtn = document.getElementById("toggleNavBtn");
+    const mobileNavbar = document.getElementById("mobileNavbar");
+
+    // Hide the mobile navbar initially
+    mobileNavbar.style.display = "none";
+
+    if (toggleNavBtn) {
+      toggleNavBtn.addEventListener("click", () => {
+        if (mobileNavbar.style.display === "none" || mobileNavbar.style.display === "") {
+          mobileNavbar.style.display = "block";
+        } else {
+          mobileNavbar.style.display = "none";
+        }
+      });
+    }
+  });
