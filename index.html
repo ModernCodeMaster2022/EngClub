@@ -20,7 +20,7 @@
           <a href="#" class="text-white text-xl font-bold">MADE</a>
         </div>
         <!-- Navigation Links -->
-        <ul class="flex space-x-8">
+        <ul class="space-x-8 lg:flex hidden">
           <li class="flex space-x-1 slide-in-right">
             <a
               href="#"
@@ -104,7 +104,7 @@
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                class="w-5 h-5 mt-0.5 hover:fill-white"
+                class="w-5 h-5 mt-1 hover:fill-white"
               >
                 <path
                   stroke-linecap="round"
@@ -116,8 +116,34 @@
             </a>
           </li>
         </ul>
+        <!-- Mobile Navbar -->
+        <div class="fixed inset-x-0 top-full z-50 bg-yellow-500 overflow-hidden transition-all duration-300 ease-in-out transform lg:hidden" id="mobileNavbar">
+          <div class="container mx-auto px-4 py-6">
+            <ul class="flex flex-col items-center space-y-4">
+              <li class="slide-in-bottom">
+                <a href="#" class="text-white hover:text-yellow-700 transition duration-300 ease-in-out">Home</a>
+              </li>
+              <li class="slide-in-bottom">
+                <a href="#" class="text-white hover:text-yellow-700 transition duration-300 ease-in-out">Gallery</a>
+              </li>
+              <li class="slide-in-bottom">
+                <a href="#" class="text-white hover:text-yellow-700 transition duration-300 ease-in-out">Mission</a>
+              </li>
+              <li class="slide-in-bottom">
+                <a href="#" class="text-white hover:text-yellow-700 transition duration-300 ease-in-out">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <button id="toggleNavBtn" class="text-white focus:outline-none hover:bg-yellow-600 rounded-full hover:p-2 lg:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+            <path fill-rule="evenodd" d="M12 4c-1.105 0-2 .895-2 2s.895 2 2 2 2-.895 2-2-.895-2-2-2zm0 8c-1.105 0-2 .895-2 2s.895 2 2 2 2-.895 2-2-.895-2-2-2zm0 8c-1.105 0-2 .895-2 2s.895 2 2 2 2-.895 2-2-.895-2-2-2z" clip-rule="evenodd"/>
+          </svg>
+        </button>
       </div>
     </nav>
+  </div>
     <div class="grid grid-cols-2 min-h-screen pt-14" id="content-wrapper">
       <!-- First division -->
       <div
