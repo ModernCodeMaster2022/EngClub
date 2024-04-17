@@ -1,6 +1,28 @@
 const images = [
-    "Pic1.jpg",
-    "Pic2.jpg",
+    "pictures/Pic1.jpg",
+    "pictures/Pic2.jpg",
+    "pictures/Pic24.jpg",
+    "pictures/Pic3.jpg",
+    "pictures/Pic4.jpg",
+    "pictures/Pic5.jpg",
+    "pictures/Pic6.jpg",
+    "pictures/Pic7.jpg",
+    "pictures/Pic8.jpg",
+    "pictures/Pic9.jpg",
+    "pictures/Pic10.jpg",
+    "pictures/Pic11.jpg",
+    "pictures/Pic12.jpg",
+    "pictures/Pic13.jpg",
+    "pictures/Pic14.jpg",
+    "pictures/Pic15.jpg",
+    "pictures/Pic16.jpg",
+    "pictures/Pic17.jpg",
+    "pictures/Pic18.jpg",
+    "pictures/Pic19.jpg",
+    "pictures/Pic20.jpg",
+    "pictures/Pic21.jpg",
+    "pictures/Pic22.jpg",
+    "pictures/Pic23.jpg"
   ];
 let currentIndex = 0;
 const imageWidget = document.getElementById("image-widget");
@@ -9,12 +31,16 @@ let rotationInterval; // Variable to store interval ID
 
 function changeImage() {
     imageElement.src = images[currentIndex];
+}
+
+function updImage(){
     currentIndex = (currentIndex + 1) % images.length;
+    imageElement.src = images[currentIndex];
 }
 
 function startImageRotation() {
     changeImage();
-    rotationInterval = setInterval(changeImage, 5000); // Rotate image every 5 seconds
+    rotationInterval = setInterval(updImage, 5000); // Rotate image every 5 seconds
 }
 
 // Show image widget and start rotation when page loads
@@ -24,19 +50,12 @@ window.addEventListener("load", () => {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    const thumbnails = ["image1.jpg", "image2.jpg", "image3.jpg"]; // Array of image thumbnails
     const prevButton = document.getElementById("prev-btn");
     const nextButton = document.getElementById("next-btn");
-
-    // Update displayed image
-    function updateImage() {
-        imageElement.src = images[currentIndex];
-    }
 
     // Event listener for previous button
     prevButton.addEventListener("click", function () {
         currentIndex = (currentIndex - 1 + images.length) % images.length;
-        updateImage();
         changeImage();
         restartRotationTimer();
     });
@@ -44,7 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Event listener for next button
     nextButton.addEventListener("click", function () {
         currentIndex = (currentIndex + 1) % images.length;
-        updateImage();
         changeImage();
         restartRotationTimer();
     });
@@ -56,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Initial display of first image
-    updateImage();
+    changeImage();
 });
 
 //Mobile-friendly specifications
