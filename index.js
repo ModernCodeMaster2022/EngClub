@@ -118,3 +118,37 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   });
+
+// Get the image container and the image itself
+const imageContainer = document.querySelector('.image-container');
+const image = document.getElementById('image-widget-img');
+
+// Function to update image size
+function updateImageSize() {
+  const windowWidth = window.innerWidth;
+  const containerWidth = Math.min(windowWidth * 0.8, 500); // Set maximum width to 500px or 80% of window width, whichever is smaller
+  const containerHeight = containerWidth - 100; // Height is 100 pixels less than the width
+  const imageAspectRatio = image.naturalWidth / image.naturalHeight;
+  
+  // Calculate the width and height of the image to fit inside the container
+  let newWidth, newHeight;
+  if (imageAspectRatio > 1) {
+    // Landscape orientation
+    newWidth = containerWidth;
+    newHeight = containerWidth / imageAspectRatio;
+  } else {
+    // Portrait or square orientation
+    newHeight = containerHeight;
+    newWidth = containerHeight * imageAspectRatio;
+  }
+
+  // Set the dimensions of the image container and the image
+  imageContainer.style.width = `${containerWidth}px`;
+  imageContainer.style.height = `${containerHeight}px`;
+  image.style.width = `${newWidth}px`;
+  image.style.height = `${newHeight}px`;
+}
+
+// Call the function initially and on window resize
+updateImageSize();
+window.addEventListener('resize', updateImageSize);
