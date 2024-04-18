@@ -22,7 +22,13 @@ const images = [
     "pictures/Pic20.jpg",
     "pictures/Pic21.jpg",
     "pictures/Pic22.jpg",
-    "pictures/Pic23.jpg"
+    "pictures/Pic23.jpg",
+    "pictures/Pic25.jpg",
+    "pictures/Pic26.jpg",
+    "pictures/Pic27.jpg",
+    "pictures/Pic28.jpg",
+    "pictures/Pic29.jpg",
+    "pictures/Pic30.jpg"
   ];
 let currentIndex = 0;
 const imageWidget = document.getElementById("image-widget");
